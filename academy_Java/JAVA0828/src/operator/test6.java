@@ -12,6 +12,7 @@ public class test6 {
 		// age가 5세 미만 이거나 65세 이상을 연산자로 표현
 		System.out.println((age < 5) || (age >= 65));
 		
+		
 	}
 
 }
