@@ -53,7 +53,7 @@ public class Ex3 {
 		
 		for(int i = 0; i < array.length; i++) {
 			// max에 저장된 값과 배열(array)의 i번에 저장된 값을 비교하여
-			// max값 보다 배열 데이터(array[i]) ej zmf ruddn
+			// max값 보다 배열 데이터(array[i]) 더 클 경우
 			// 배열 데이터(array[i]) 를 max 변수에 저장
 			if(max < array[i]) {
 				System.out.println(array[i] + "가(이)" + max + "보다 더 크다.");
@@ -74,6 +74,21 @@ public class Ex3 {
 		 *     모든 데이터가 0보다 크지 않으므로 최대값 계산이 불가능하게 됨
 		 *     => 따라서, 0 대신 배열의 첫 번째 데이터를 초기값으로 갖고 비교
 		 */
+		
+		int[] array2 = {-9, -5, -3, -8, -7};
+		
+		// array2 배열의 0번 인덱스 데이터를 최대값으로 저장
+		int max2 = array2[0];
+		
+		// 주의! 0번의 데이터를 이미 최대값으로 저장했지 때문에
+		// 0번 인덱스를 제외한 나머지값만 비교하면 됨(1번부터 반복)
+		for(int i = 1; i < array2.length; i++) {
+			System.out.println(array2[i] + " vs " + max2);
+			if(array2[i] > max2) {
+				max2 = array2[i];
+			}
+		}
+		System.out.println("max2 = " + max2);
 	}
 
 }
