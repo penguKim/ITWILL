@@ -69,9 +69,9 @@ public class Ex {
 		// %xd : x자리수만큼의 자리를 차지
 		// %0xd : x자리수만큼의 자리를 차지하고, 빈자리를 0으로 채움
 		// => ex) ...printf("%02d", 2) -> 02
-		System.out.printf("%d",1); // '1'
-		System.out.printf("%2d",1); // ' 1'
-		System.out.printf("%02d",1); // '01'
+		System.out.printf("%d\n",1); // '1'
+		System.out.printf("%2d\n",1); // ' 1'
+		System.out.printf("%02d\n",1); // '01'
 		System.out.println();
 		System.out.println("나이는 " + age + " 세 입니다.");
 		System.out.printf("나이는 %d세 입니다.\n", 30);

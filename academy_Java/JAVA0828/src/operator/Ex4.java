@@ -75,7 +75,7 @@ public class Ex4 {
 //		ch  = ch + 3; // 컴파일 에러 발생!
 		// => char + int -> int + int -> int
 		
-		// 해경발법
+		// 해결방법
 //		ch = (char)(ch + 3); // 형변환을 수행하거나
 		ch += 3;
 		System.out.println(ch);

@@ -4,7 +4,7 @@ public class Test_2 {
 
 	public static void main(String[] args) {
 		
-		MyDate2 md = new MyDate2(2023, 2, 29);
+		MyDate2 md = new MyDate2(2024, 2, 29);
 	}
 
 }
