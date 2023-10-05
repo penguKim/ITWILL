@@ -57,8 +57,8 @@ class CardCompany {
 		return instance;
 	}
 	
-	public int getCardSerialNum() {
-		return cardSerialNum += 1;
+	public static int getCardSerialNum() {
+		return ++cardSerialNum;
 	}
 
 
@@ -73,8 +73,7 @@ class Card {
 	String CardName = null;
 	
 	public Card() {
-		CardCompany cc = CardCompany.getInstance();
-		CardNum = cc.getCardSerialNum();
+		CardNum = CardCompany.getCardSerialNum();
 	}
 	
 }
