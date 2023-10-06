@@ -20,7 +20,7 @@ public class Test4_2 {
 		 */
 		
 		CardCompany cardCompany = CardCompany.getInstance();
-		
+					
 		Card card = new Card();
 		card.cardName = cardCompany.createCard("현대 Zero 카드");
 		
@@ -61,7 +61,7 @@ class CardCompany {
 
 class Card {
 	int cardNum = 0;
-	String cardName;
+	String cardName = null;
 	
 	public Card() {
 		CardCompany.cardSerialNum += 1;
