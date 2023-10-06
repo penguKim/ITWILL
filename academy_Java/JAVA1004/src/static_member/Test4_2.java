@@ -9,75 +9,72 @@ public class Test4_2 {
 		 * 카드 클래스를 만들고 생성해보세요.
 		 * 
 		 * 1. CardCompany 클래스 생성
-		 *    - cardSerialNum(카드 고유번호) ex)10000
+		 *    - cardSerialNum(카드 고유번호)
 		 *    - createCard() 메서드 생성 : 파라미터, 리턴값 있음
 		 * 2. Card 클래스 생성
 		 *    - CardNum(카드 번호)
 		 *    - CardName(카드 이름)
 		 * 
 		 * Card 클래스를 생성하고 CardNum 을 출력하면 1씩 증가하는 값을
-		 * 출력할 수 있음. 
-		 * ex) new Card(); -> 10001
-		 * ex) new Card(); -> 10002
+		 * 출력할 수 있음.
 		 */
-
-//		CardCompany cardCompany = new CardCompany();
+		
 		CardCompany cardCompany = CardCompany.getInstance();
 		
 		Card card = new Card();
-		card.CardName = cardCompany.createCard("현대 Zero 카드");
+		card.cardName = cardCompany.createCard("현대 Zero 카드");
 		
 		Card card2 = new Card();
-		card2.CardName = cardCompany.createCard("현대 M 카드");
+		card2.cardName = cardCompany.createCard("현대 M 카드");
 		
-		Card card3 = new Card();
-		card3.CardName = cardCompany.createCard("내카드");
+		System.out.println("카드 고유 번호 : " + card.cardNum);
+		System.out.println("카드 이름 : " + card.cardName);
 		
-		System.out.println("카드 고유 번호 : " + card.CardNum);
-		System.out.println("카드 이름 : " + card.CardName);
-		
-		System.out.println("카드 고유 번호 : " + card2.CardNum);
-		System.out.println("카드 이름 : " + card2.CardName);
-		
-		System.out.println("카드 고유 번호 : " + card3.CardNum);
-		System.out.println("카드 이름 : " + card3.CardName);
+		System.out.println("카드 고유 번호 : " + card2.cardNum);
+		System.out.println("카드 이름 : " + card2.cardName);
 		
 	}
 
 }
 
 class CardCompany {
-	private static int cardSerialNum = 10000;
+	static int cardSerialNum = 10000;
 	
+	public String createCard(String cardName) {
+		return cardName;
+	}
+	
+	// ===================== 싱글톤 디자인 패턴 적용 ====================
+	// 1. 자신의 인스턴스를 생성하여 자신의 클래스 타입 변수 instance 에 저장
+	//    => private static 선언
+	private static CardCompany instance = new CardCompany();
+	
+	// 2. 기본 생성자 정의 => private
 	private CardCompany() {}
 	
-	private static CardCompany instance = new CardCompany();
-
+	// 3. Getter 정의 => public static 선언
 	public static CardCompany getInstance() {
 		return instance;
-	}
-	
-	public int getCardSerialNum() {
-		return cardSerialNum += 1;
-	}
-
-
-	String createCard(String cardName) {
-		return cardName;
 	}
 	
 }
 
 class Card {
-	int CardNum = 0;
-	String CardName = null;
+	int cardNum = 0;
+	String cardName;
 	
 	public Card() {
-		CardCompany cc = CardCompany.getInstance();
-		CardNum = cc.getCardSerialNum();
+		CardCompany.cardSerialNum += 1;
+		cardNum = CardCompany.cardSerialNum;
 	}
-	
 }
+
+
+
+
+
+
+
 
 
 
