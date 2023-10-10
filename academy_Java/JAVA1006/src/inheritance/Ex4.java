@@ -10,7 +10,7 @@ public class Ex4 {
 		 *   => 상속받을 경우 자신의 클래스 이름과 생성자 이름이 다르기 때문에
 		 *      생성자 정의 규칙을 위반하게 됨
 		 * - 상속 관계에서 인스턴스를 생성할 때
-		 *   서브클래스의 인스턴스가 생성되지 전 슈퍼클래스의 인스턴스를
+		 *   서브클래스의 인스턴스가 생성되기 전 슈퍼클래스의 인스턴스를
 		 *   먼저 생성한 후 서브클래스의 인스턴스를 생성함
 		 *   => 서브클래스의 생성자가 호출되면 가장 먼저
 		 *      슈퍼클래스의 생성자를 호출하여 슈퍼클래스의 인스턴스를 생성하고
@@ -29,14 +29,14 @@ public class Ex4 {
 		 * 3) Employee4() 생성자에서 슈퍼클래스 Object 의 생성자 Object() 호출
 		 *    => super();
 		 * 4) Object 인스턴스가 생성되고, Object() 생성자 내의 코드가 실행됨
-		 * 5) Employee4 인스턴스가 생성되고, employee4() 생성자 내의 코드가 실행됨
+		 * 5) Employee4 인스턴스가 생성되고, Employee4() 생성자 내의 코드가 실행됨
 		 * 6) Manager4 인스턴스가 생성되고, Manager4() 생성자 내의 코드가 실행됨
 		 */
 	}
 
 }
 
-class Employee4 {
+class Employee4 { // (= class Employee4 extends Object) 와 동일함
 	String name;
 	int salary;
 	
