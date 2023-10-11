@@ -34,6 +34,18 @@ public class Ex2 {
 		 * - 주의! 생성자 super() 는 반드시 생성자의 첫 문장에서 실행되어야 함!
 		 *   => 따라서, 생성자 내에서 super() 와 this() 동시 사용 불가!
 		 */
+		
+		Student s = new Student();
+		
+		System.out.println(s.name);
+		System.out.println(s.age);
+		System.out.println(s.isStudyMode);
+		
+		Student s2 = new Student("이순신", 44, false);
+		
+		System.out.println(s2.name);
+		System.out.println(s2.age);
+		System.out.println(s2.isStudyMode);
 	}
 
 }
@@ -41,6 +53,8 @@ public class Ex2 {
 class Person { // = class Person extends Object
 	String name;
 	int age;
+	
+	public Person() {} // 기본 생성자
 
 	public Person(String name, int age) {
 		super();
@@ -54,8 +68,42 @@ class Student extends Person {
 	boolean isStudyMode;
 	
 	public Student() {
-		super("홍길동", 20);
+		// 서브클래스의 기본 생성자에서 슈퍼클래스인 Person 클래스의
+		// 기본 생성자를 자동으로 호출하게 되는데
+		// 만약, 슈퍼클래스 생성자가 파라미터 생성자만 존재할 경우 오류 발생!
+		// super(); // 암묵적으로 생성자내에 포함됨.
+		// => 그러므로 Person() 생성자 없이 파라미터 생성자만 존재할 경우 오류!
+		// 따라서, 슈퍼클래스에서 기본 생성자를 별도로 정의하거나
+		// 서브클래스에서 슈퍼클래스의 파라미터 생성자를 명시적으로 호출
+//		super("홍길동", 20);
+//		isStudyMode = true;
+		
+//		name = "홍길동";
+//		age = 20;
+//		isStudyMode= true;
+		this("홍길동", 20, true);
+		
+		// 생성자 super() 는 생성자 this() 와 마찬가지로
+		// 생성자 내에서 가장 먼저 실행되어야 한다.
 	}
+
+	public Student(String name, int age, boolean isStudyMode) {
+		// Student 클래스 생성자에서 모든 멤버변수를 직접 초기화 할 경우
+//		super();
+//		this.name = name;
+//		this.age = age;
+//		this.isStudyMode = isStudyMode;
+		
+		// name 과 age 멤버변수 초기화하는 코드는
+		// 슈퍼클래스인 Person 클래스의 생성자의 초기화 코드와 중복됨
+		// 따라서, 슈퍼클래스로부터 상속받은 멤버변수의 초기화는
+		// 슈퍼클래스 생성자에서 수행하고, 서브클래스의 멤버만 초기화를 직접 수행
+		// => 이 때, 슈퍼클래스의 파라미터 생성자를 호출하여 대신 초기화를 수행
+		super(name, age); // 슈퍼클래스 생성자에 name, age 전달하여 대신 초기화
+		this.isStudyMode = isStudyMode; // 자신의 멤버변수만 직접 초기화
+	}
+	
+	
 	
 }
 
