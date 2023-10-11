@@ -61,7 +61,7 @@ class Account {
 		return amount;
 	}
 	public void showAccountInfo() {
-		System.out.println("현재잔고 : " + accountNo);
+		System.out.println("계좌번호 : " + accountNo);
 		System.out.println("예금주명 : " + ownerName);
 		System.out.println("현재잔고 : " + balance + "원");
 	}
