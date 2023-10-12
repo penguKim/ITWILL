@@ -83,7 +83,7 @@ public class Ex {
 	 }
  }
 
- // FinalMethod 클래스를 상속받는 SubFinalMethod 클래스 저으이
+ // FinalMethod 클래스를 상속받는 SubFinalMethod 클래스 정의
  // => 메서드 오버라이딩
  class SubFinalMethod extends FinalMethod {
 	 
