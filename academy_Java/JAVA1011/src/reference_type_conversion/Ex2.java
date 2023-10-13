@@ -55,7 +55,7 @@ public class Ex2 {
 			
 			hp.call(); // HandPhone의 기능인 전화 기능과
 			hp.sms(); // 문자 기능을 사용할 수 있으나
-//			hp.kakaoTalk(); // SmartPhone 의 기능은 사용을 포기햐아 한다!
+//			hp.kakaoTalk(); // SmartPhone 의 기능은 사용을 포기해야 한다!
 		} else {
 			System.out.println("sp 는 HandPhone이 아니다!");
 		}
