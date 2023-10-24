@@ -71,7 +71,7 @@ public class Ex3 {
 		// 오버라이딩한 toString() 를 통해 String 클래스 변환
 		// 지금까지 buffer 에 쌓인 문자열을 String 으로 리턴한다.
 		str2 = buffer.toString();
-		System.out.println(str);
+		System.out.println(str2);
 		System.out.println("새로 만들어진 str2 문자열 주소 : " + System.identityHashCode(str2));
 		
 		

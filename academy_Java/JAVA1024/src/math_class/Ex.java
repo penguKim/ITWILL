@@ -16,12 +16,12 @@ public class Ex {
 		
 		int num = -10;
 		
-		// 어떤 수의 절대값을 출력할때 사용히는 abs() 메서드
+		// 어떤 수의 절대값을 출력할때 사용하는 abs() 메서드
 		System.out.println("num의 절대값 : " + Math.abs(num));
 		// 값 비교하여 큰 값 출력하는 max() 메서드
 		System.out.println("num 과 20 중 큰 값 : " + Math.max(num, 20));
 		// 값 비교하여 작은 값 출력하는 min() 메서드
-		System.out.println("num 과 20 중 큰 값 : " + Math.min(num, 20));
+		System.out.println("num 과 20 중 작은 값 : " + Math.min(num, 20));
 		// 파라미터로 전달한 값의 제곱근을 구하는 sqrt() 메서드
 		System.out.println("4 의 제곱근 : " + Math.sqrt(4));
 		
@@ -58,7 +58,7 @@ public class Ex {
 		// => long 타입 결과값을 int 타입 1000 으로 나누면 결과값이 정수
 		//    반드시 둘 중 하나라도 double 타입 실수로 연산을 수행해야 한다.
 		
-		System.out.println(Math.round(dNum * 1000) / 1000.0);
+		System.out.println(Math.round(dNum * 1000) / 1000.0); // 3.142
 		
 		// ===========================================
 		// 참고! 특정 위치의 숫자까지만 남기고 나머지는 제거해야할 경우

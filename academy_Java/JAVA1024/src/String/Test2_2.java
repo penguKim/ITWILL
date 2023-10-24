@@ -10,7 +10,7 @@ public class Test2_2 {
 		 * 해당 문자열에 대한 간단한 암호화 작업
 		 * - 문자열을 분리하여 저장한 배열을 encrypt() 에 전달
 		 * - 전달받은 배열의 문자에 대해 아스키코드 값 3만큼 증가한 문자를
-		 *   별도의 배열에 저장한 후 문자열로 변환하여 리텅
+		 *   별도의 배열에 저장한 후 문자열로 변환하여 리턴
 		 *   ex) 'A'(65) -> 'D'(68)
 		 *   ex) "Hello" -> 'H', 'e', 'l', 'l', 'o' 형태로 배열에 저장됨
 		 *       암호화 작업 결과물 : 'K', 'h', 'o', 'o', 'r'
@@ -72,9 +72,9 @@ public class Test2_2 {
 		for(char ch : encryptedArr) {
 			buffer.append(ch);
 		}
-//		return buffer.toString();
-		String encryptedStr = buffer.toString();
-		return encryptedStr;
+		return buffer.toString();
+//		String encryptedStr = buffer.toString();
+//		return encryptedStr;
 		
 		
 	}
