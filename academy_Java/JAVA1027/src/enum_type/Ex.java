@@ -123,8 +123,8 @@ class Week {
 	// => 클래스명만으로 사용이 가능하여 접근이 쉬움.
 	//    또한, 값 변경이 불가능하여 안전함.
 	public static final int WEEK_MONDAY = 0;
-	public static final int WEEK_TUSEDAY = 1;
-	public static final int WEEK_WEDENSDAY = 2;
+	public static final int WEEK_TUESDAY = 1;
+	public static final int WEEK_WEDNESDAY = 2;
 	public static final int WEEK_THURSDAY = 3;
 	public static final int WEEK_FRIDAY = 4;
 	public static final int WEEK_SATURDAY = 5;
