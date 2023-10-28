@@ -26,8 +26,8 @@ public class Ex2 {
 			// case 문을 사용하여 emum 상수를 지정하면 비교 가능
 			// => 주의! enum타입명.상수 가 아닌 그냥 상수 자체를 비교
 			case MONDAY : System.out.println("월요일입니다!"); break;
-			case TUSEDAY : System.out.println("화요일입니다!"); break;
-			case WEDENSDAY : System.out.println("수요일입니다!"); break;
+			case TUESDAY : System.out.println("화요일입니다!"); break;
+			case WEDNESDAY : System.out.println("수요일입니다!"); break;
 			case THURSDAY : System.out.println("목요일입니다!"); break;
 			case FRIDAY : System.out.println("금요일입니다!"); break;
 			case SATURDAY : System.out.println("토요일입니다!"); break;

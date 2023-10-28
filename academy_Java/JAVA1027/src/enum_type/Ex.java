@@ -94,7 +94,7 @@ public class Ex {
 enum EnumWeek {
 	// 열거형 정의 시 중괄호 내부에는 값을 갖는 상수 이름만 나열함
 	// (별도의 값을 지정하지 않는다!)
-	MONDAY, TUSEDAY, WEDENSDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
 }
 
 // 열거타입을 사용하는 클래스 정의
