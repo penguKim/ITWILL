@@ -7,7 +7,7 @@ public class Ex3 {
 	public static void main(String[] args) {
 		/*
 		 * [ 날짜 및 시각 관련 클래스 ]
-		 * 1. Dtae 클래스
+		 * 1. Date 클래스
 		 * - 날짜 및 시각 관련 기능을 제공하는 클래스
 		 * - 대부분의 생성자 및 메서드가 deprecate 처리되어 있음
 		 *   => 다양한 API 들이 여전히 Date 타입을 사용하는 경우가 많음
