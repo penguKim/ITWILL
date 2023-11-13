@@ -1,5 +1,7 @@
 package lambda;
 
+import java.util.Scanner;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -10,15 +12,34 @@ public class Test {
 		 *     "Hello,World" 가 출력
 		 */
 		
-		StringInterface si = (x, y) -> x + "," + y;
+		// 객체 지향 프로그래밍 방식
+		Scanner scan = new Scanner(System.in);
+		System.out.print("첫 번째 문자열을 입력하세요 : ");
+		String s1 = scan.nextLine();
 		
-		System.out.println(si.add("Hello", "World"));
+		System.out.print("두 번째 문자열을 입력하세요 : ");
+		String s2 = scan.nextLine();
 		
+		StringConcatImpl concat1 = new StringConcatImpl();
+		concat1.makeString(s1, s2);
+		
+		
+		// 람다식으로 인터페이스 구현
+		StringConcat concat2 = (s, v) ->  System.out.println(s + "," + v);
+		concat2.makeString(s1, s2);
 		
 	}
 
 }
+
 @FunctionalInterface
-interface StringInterface {
-	String add(String str1, String str2);
+interface StringConcat {
+	public void makeString(String s1, String s2);
+}
+
+class StringConcatImpl implements StringConcat {
+	@Override
+	public void makeString(String s1, String s2) {
+		System.out.println(s1 + "," + s2);		
+	}
 }

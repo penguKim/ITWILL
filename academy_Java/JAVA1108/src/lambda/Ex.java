@@ -55,38 +55,46 @@ public class Ex {
 		 * (x, y) -> x + y
 		 */
 		
-		// 구현클래스를 활용한 getMax() 메서드 호출
-		MyNumber max = new  MyNumberClass();
+		// MaxPrintNumber 클래스 활용
+		MaxPrintNumber mpn = new MaxPrintNumber();
+		System.out.println(mpn.maxNum(10, 20));
+		
+		System.out.println("-----------------------------");
+				
+		// 구현클래스를 활용한 getMax 메서드 호출
+		MyNumber max = new MyNumberClass(); // 업캐스트 적용
 		System.out.println(max.getMax(10, 20));
 		
 		// 람다식 구현과 호출
-		MyNumber max2 = (x, y) -> (x >= y) ? x: y;
-		// => 람다식 인터페이스형 max2 변수에 대입
+		MyNumber max2 = (x, y) -> (x >= y) ? x : y; 
+		// => 람다식을 인터페이스형 max2 변수에 대입
 		System.out.println(max2.getMax(10, 20)); // 인터페이스형 변수로 메서드 호출
-		
-		
-		
-		
+
 	}
 
 }
 
-// 함수형 인터페이스 선언하기
-// => 자바에서는 참조 변수 없이 메서드를 호출할 수 없음.
-// => 람다식을 구현하기 위해 함수형 인터페이스를 만들고, 인터페이스에 람다식으로 구현할
-//    메서드를 선언하는 형태로 사용
-// => 주의! 람다식은 하나의 메서드를 구현하여 인터페이스형 변수에 대입하므로
-//    인터페이스가 두 개 이상의 메서드를 가지면 안된다!
-
-@FunctionalInterface // 함수형 인터페이스 용도로 사용됨을 알림
-interface MyNumber {
-	int getMax(int num1, int num2); // 추상메서드 선언
-	// 두 개의 메서드를 선언하면 오류 발생!
-//	int add(int num1, int num2);
+// =================================================================
+// 두 수를 입력받아 큰 수를 출력하는 메서드를 가진 클래스 정의
+class MaxPrintNumber {
+	public int maxNum(int num1, int num2) {
+		if(num1 >= num2) {
+			return num1;
+		} else {
+			return num2;
+		}
+	}
 }
+
+// ===========================================================
+// MyNumberClass에서 구현하는 인터페이스 정의
+//interface MyNumber {
+//	int getMax(int num1, int num2); // 추상메서드 선언
+//}
 
 // MyNumber 인터페이스를 구현한 MyNumberClass 정의
 class MyNumberClass implements MyNumber {
+	
 	// 두 수를 입력받아 둘 중 큰 숫자를 리턴하는 getMax() 메서드 정의
 	@Override
 	public int getMax(int num1, int num2) {
@@ -96,6 +104,20 @@ class MyNumberClass implements MyNumber {
 			return num2;
 		}
 	}
+	
+}
+
+// 위의 getMax() 메서드를 람다식으로 표현하기 위해 
+// 함수형 인터페이스 선언한다.
+// => 자바에서는 참조 변수 없이 메서드를 호출할 수 없음.
+// => 람다식을 구현하기 위해 함수형 인터페이스를 만들고, 
+//    인터페이스에 람다식으로 구현할 메서드를 선언하는 형태로 사용
+// => 주의! 람다식은 하나의 메서드를 구현하여 인터페이스형 변수에 대입하므로
+//    인터페이스가 두 개 이상의 메서드를 가지면 안된다!
+@FunctionalInterface // 함수형 인터페이스 용도로 사용됨을 알림
+interface MyNumber {
+	int getMax(int num1, int num2); // 추상메서드 선언
+//	int add(int num1, int num2);
 }
 
 
