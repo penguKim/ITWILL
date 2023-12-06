@@ -1,7 +1,9 @@
 package io_2;
 
 import java.io.BufferedReader;
+import java.io.IOError;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
@@ -29,8 +31,6 @@ public class Test {
 		// ----------------- 위 세 문장을 하나의 문장으로 결합 ---------------------
 //		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 		
-		// 데이터를 파일로 저장거나 다른 데이터로 전달하는 용도로 OutputStream을 사용한다.
-		
 		// try with resources 구문 작성
 		// => try() 문장 소괄호 내에 복수 개의 객체를 세미콜론(;)으로 구분하여 전달 가능
 		try(BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
@@ -50,6 +50,19 @@ public class Test {
 			e.printStackTrace();
 		}
 		
+
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
